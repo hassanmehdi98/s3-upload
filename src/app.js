@@ -5,7 +5,12 @@ const AWS = require("aws-sdk");
 const { v4: uuid } = require("uuid");
 const mime = require("mime-types");
 
-dotenv.config();
+// console.log(dotenv.config());
+const { parsed } = dotenv.config();
+if (!parsed.S3_BUCKET_ENDPOINT || !parsed.S3_BUCKET_KEY || !parsed.S3_BUCKET_SECRET || !parsed.S3_BUCKET_NAME) {
+    console.log("Error parsing the env variables! Make sure you provided the correct .env file!");
+    process.exit(0);
+}
 
 const s3BucketEndpoint = new AWS.Endpoint(process.env.S3_BUCKET_ENDPOINT);
 const s3 = new AWS.S3({
