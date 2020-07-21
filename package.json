@@ -15,5 +15,8 @@
     "dotenv": "^8.2.0",
     "mime-types": "^2.1.27",
     "uuid": "^8.2.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
