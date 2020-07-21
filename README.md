@@ -16,6 +16,6 @@ Key|Value (Example)
 
 3- Simply add file in `files/` folder
 
-4- Replace path in `app.js` file.
+4- Replace `fileName` variable to your file's name in `app.js` file.
 
 5- Run `npm start`

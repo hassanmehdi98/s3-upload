@@ -40,7 +40,10 @@ const uploadFileToS3 = ({ filePath, ACL = "public-read" }) => {
     })
 }
 
-uploadFileToS3({ filePath: path.resolve(__dirname, "..", "files", "sample.png") })
+const fileName = "sample.png";
+const filePath = path.resolve(__dirname, "..", "files", fileName);
+
+uploadFileToS3({ filePath: filePath })
     .then(data => {
         console.log(data);
         // do whatever you want with it (save in database etc.)
